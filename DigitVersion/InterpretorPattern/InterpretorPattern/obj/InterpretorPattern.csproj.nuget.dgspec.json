@@ -1,0 +1,59 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Anders Hansen\\Google Drive\\1IKT\\4. Semester\\I4SWD\\Handin1\\MyInterpreterPattern\\InterpretorPattern\\InterpretorPattern\\InterpretorPattern.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Anders Hansen\\Google Drive\\1IKT\\4. Semester\\I4SWD\\Handin1\\MyInterpreterPattern\\InterpretorPattern\\InterpretorPattern\\InterpretorPattern.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Anders Hansen\\Google Drive\\1IKT\\4. Semester\\I4SWD\\Handin1\\MyInterpreterPattern\\InterpretorPattern\\InterpretorPattern\\InterpretorPattern.csproj",
+        "projectName": "InterpretorPattern",
+        "projectPath": "C:\\Users\\Anders Hansen\\Google Drive\\1IKT\\4. Semester\\I4SWD\\Handin1\\MyInterpreterPattern\\InterpretorPattern\\InterpretorPattern\\InterpretorPattern.csproj",
+        "packagesPath": "C:\\Users\\Anders Hansen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Anders Hansen\\Google Drive\\1IKT\\4. Semester\\I4SWD\\Handin1\\MyInterpreterPattern\\InterpretorPattern\\InterpretorPattern\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Anders Hansen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
