@@ -1,16 +1,16 @@
 namespace RPNInterpreter {
     class Divide : IExpression {
-        private IExpression a;
-        private IExpression b;
-        public Divide(IExpression a, IExpression b){
-            this.a = a;
-            this.b = b;
+        private IExpression left;
+        private IExpression right;
+        public Divide(IExpression left, IExpression right){
+            this.left = left;
+            this.right = right;
         }
         void IExpression.Interpret(Context context)
         {
-            b.Interpret(context);
-            a.Interpret(context);
-            context.s.Push((int) context.s.Pop() / (int) context.s.Pop());
+            right.Interpret(context);
+            left.Interpret(context);
+            context.s.Push(context.s.Pop() /  context.s.Pop());
         }
     }
 }

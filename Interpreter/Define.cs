@@ -1,20 +1,20 @@
 namespace RPNInterpreter {
     class Define : IExpression {
 
-        private IExpression a;
-        private string v;
-        public Define(IExpression a, string v) {
-            this.a = a;
-            this.v = v;
+        private IExpression value;
+        private string name;
+        public Define(IExpression value, string name) {
+            this.value = value;
+            this.name = name;
         }
 
         void IExpression.Interpret(Context context) {
-            a.Interpret(context);
+            this.value.Interpret(context);
             int value;
-            if(context.d.TryGetValue(v, out value)) {
-                context.d[v] = (int) context.s.Pop();
+            if(context.d.TryGetValue(name, out value)) {
+                context.d[name] = context.s.Pop();
             } else {
-                context.d.Add(v, (int) context.s.Pop());
+                context.d.Add(name, context.s.Pop());
             }
             
         }

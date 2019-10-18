@@ -2,17 +2,17 @@ namespace RPNInterpreter {
 
     class Plus : IExpression
     {
-        private IExpression a;
-        private IExpression b;
-        public Plus(IExpression a, IExpression b){
-            this.a = a;
-            this.b = b;
+        private IExpression left;
+        private IExpression right;
+        public Plus(IExpression left, IExpression right){
+            this.left = left;
+            this.right = right;
         }
         void IExpression.Interpret(Context context)
         {            
-            a.Interpret(context);
-            b.Interpret(context);
-            context.s.Push((int) context.s.Pop() + (int) context.s.Pop());
+            left.Interpret(context);
+            right.Interpret(context);
+            context.s.Push(context.s.Pop() + context.s.Pop());
         }
     }
 }
