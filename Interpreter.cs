@@ -39,6 +39,7 @@ namespace RPNInterpreter {
             
         }
     }
+
     class Variable : Expression
     {
         string v;
@@ -74,6 +75,21 @@ namespace RPNInterpreter {
         }
     }
 
+    class Multipli : Expression {
+        private Expression a;
+        private Expression b;
+        public Multipli(Expression a, Expression b){
+            this.a = a;
+            this.b = b;
+        }
+        public override void Interpret(Context context)
+        {
+            a.Interpret(context);
+            b.Interpret(context);
+            context.s.Push((int) context.s.Pop() * (int) context.s.Pop());
+        }
+    }
+
     class Minus : Expression
     {
         private Expression a;
@@ -87,6 +103,21 @@ namespace RPNInterpreter {
             b.Interpret(context);
             a.Interpret(context);
             context.s.Push((int) context.s.Pop() - (int) context.s.Pop());
+        }
+    }
+
+    class Divide : Expression {
+        private Expression a;
+        private Expression b;
+        public Divide(Expression a, Expression b){
+            this.a = a;
+            this.b = b;
+        }
+        public override void Interpret(Context context)
+        {
+            b.Interpret(context);
+            a.Interpret(context);
+            context.s.Push((int) context.s.Pop() / (int) context.s.Pop());
         }
     }
 
