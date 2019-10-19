@@ -12,17 +12,14 @@ namespace RPNParser {
             Tuple<TokenName, string> root = tokens.Peek();
             IExpression result = null;
             // Defining a variable is a bit special and should therefore be handled seperatly 
-            if(root.Item1 == TokenName.Identifier) {
+            if(root.Item1 == TokenName.Operator && root.Item2 == "=") {
                 root = tokens.Pop();
-                if (tokens.Count == 0) {
-                    result = new Variable(root.Item2);
+                Tuple<TokenName, string> variable_t = tokens.Pop();
+                if (variable_t.Item1 != TokenName.Identifier) {
+                    throw new SyntaxErrorException("Invalid identifier: " + variable_t.Item2);
                 } else {
-                    Tuple<TokenName, string> second = tokens.Pop();
-                    if(second.Item1 == TokenName.Operator && second.Item2 == "=") {
-                        result = new Define(buildSubtree(tokens), root.Item2);
-                    } else {
-                        throw new SyntaxErrorException("A variable cannot be followed by: "+ second.Item2);
-                    }
+                    IExpression exp = buildSubtree(tokens);
+                    return new Define(exp, variable_t.Item2);
                 }
             } else {
                 result = buildSubtree(tokens);
@@ -51,7 +48,7 @@ namespace RPNParser {
                 } else if (curr_t.Item2 == "/") {
                     return new Divide(right, left);
                 } else {
-                throw new SyntaxErrorException("We don't know what just happend, good luck!");
+                    throw new SyntaxErrorException("We don't know what just happend, good luck!");
                 }
             } 
         }
