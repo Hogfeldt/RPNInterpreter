@@ -1,5 +1,5 @@
 namespace RPNInterpreter {
-    class Divide : IExpression {
+    public class Divide : IExpression {
         private IExpression left;
         private IExpression right;
         public Divide(IExpression left, IExpression right){

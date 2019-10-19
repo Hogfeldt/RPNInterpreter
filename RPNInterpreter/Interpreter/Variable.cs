@@ -1,7 +1,7 @@
 using System;
 
 namespace RPNInterpreter {
-    class Variable : IExpression
+    public class Variable : IExpression
     {
         string v;
         public Variable(string v) {

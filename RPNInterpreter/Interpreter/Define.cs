@@ -1,5 +1,5 @@
 namespace RPNInterpreter {
-    class Define : IExpression {
+    public class Define : IExpression {
 
         private IExpression value;
         private string name;

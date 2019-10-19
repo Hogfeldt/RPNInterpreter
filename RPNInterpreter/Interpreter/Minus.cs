@@ -1,5 +1,5 @@
 namespace RPNInterpreter {
-    class Minus : IExpression
+    public class Minus : IExpression
     {
         private IExpression left;
         private IExpression b;

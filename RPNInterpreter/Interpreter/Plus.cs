@@ -1,6 +1,6 @@
 namespace RPNInterpreter {
 
-    class Plus : IExpression
+    public class Plus : IExpression
     {
         private IExpression left;
         private IExpression right;

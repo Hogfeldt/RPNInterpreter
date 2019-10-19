@@ -1,6 +1,6 @@
 
 namespace RPNInterpreter {
-    class Multiply : IExpression {
+    public class Multiply : IExpression {
         private IExpression left;
         private IExpression right;
         public Multiply(IExpression left, IExpression right){

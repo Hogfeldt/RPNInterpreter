@@ -2,7 +2,7 @@ using System;
 
 namespace RPNInterpreter {
 
-    class Number : IExpression
+    public class Number : IExpression
     {
         private int digit;
         private Number child = null;

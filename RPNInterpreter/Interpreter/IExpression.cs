@@ -1,6 +1,6 @@
     
 namespace RPNInterpreter {
-    interface IExpression
+    public interface IExpression
     {
         void Interpret(Context context);
     }

@@ -4,7 +4,7 @@ using System;
 using System.Text.RegularExpressions;
 
 namespace RPNParser {
-    class Parser {
+    public class Parser {
         enum TokenName {Operator, Literal, Identifier};
 
         public IExpression parse(string input) {
