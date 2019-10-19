@@ -34,11 +34,11 @@ namespace RPNInterpreter {
             if(child != null) {
                 IExpression c = (IExpression) child;
                 c.Interpret(context);
-                int childVal = context.s.Pop();
-                context.s.Push((digit * Convert.ToInt32(Math.Pow(Convert.ToDouble(10),Convert.ToDouble(numOfChildren)))) + childVal);
+                int childVal = context.S.Pop();
+                context.S.Push((digit * Convert.ToInt32(Math.Pow(Convert.ToDouble(10),Convert.ToDouble(numOfChildren)))) + childVal);
             }
             else {
-                context.s.Push(digit);
+                context.S.Push(digit);
             }
         }
     }

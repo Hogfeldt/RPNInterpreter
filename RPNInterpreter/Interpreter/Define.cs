@@ -11,10 +11,10 @@ namespace RPNInterpreter {
         void IExpression.Interpret(Context context) {
             this.value.Interpret(context);
             int value;
-            if(context.d.TryGetValue(name, out value)) {
-                context.d[name] = context.s.Pop();
+            if(context.D.TryGetValue(name, out value)) {
+                context.D[name] = context.S.Pop();
             } else {
-                context.d.Add(name, context.s.Pop());
+                context.D.Add(name, context.S.Pop());
             }
             
         }

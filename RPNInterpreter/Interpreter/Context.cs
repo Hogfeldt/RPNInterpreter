@@ -3,16 +3,16 @@ using System.Collections.Generic;
 namespace RPNInterpreter {
     public class Context
     {
-        public Stack<int> s {get;}
-        public Dictionary<string, int> d {get;}
+        public Stack<int> S {get;}
+        public Dictionary<string, int> D {get;}
         public Context() {
-            s = new Stack<int>();
-            d = new Dictionary<string, int>();
+            S = new Stack<int>();
+            D = new Dictionary<string, int>();
         }
         // For testing purpose
         public Context(Stack<int> s, Dictionary<string, int> d) {
-            this.s = s;
-            this.d = d;
+            this.S = s;
+            this.D = d;
         }
     }
 }
