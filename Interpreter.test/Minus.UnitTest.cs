@@ -28,16 +28,16 @@ namespace Tests
 
         public void Minus_UnitTest(int a, int b, int result)
         {
-            _context.s.Push(a);
-            _context.s.Push(b);
+            _context.S.Push(a);
+            _context.S.Push(b);
 
             _uut.Interpret(_context);
 
             _a.Received().Interpret(_context);
             _b.Received().Interpret(_context);
 
-            _context.s.Received(2).Pop();
-            _context.s.Received().Push(result);
+            _context.S.Received(2).Pop();
+            _context.S.Received().Push(result);
         }
     }
 }

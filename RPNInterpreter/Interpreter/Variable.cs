@@ -10,9 +10,9 @@ namespace RPNInterpreter {
         void IExpression.Interpret(Context context)
         {
             int value;
-            if(context.d.TryGetValue(v,out value))
+            if(context.D.TryGetValue(v,out value))
             {
-                context.s.Push(value);
+                context.S.Push(value);
             }
             else {
                 throw new VariableNotFoundException();

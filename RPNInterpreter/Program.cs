@@ -13,8 +13,8 @@ class Program
             string input = Console.ReadLine();
             IExpression e = p.parse(input);
             e.Interpret(c);
-            if (c.s.Count != 0) {
-                Console.WriteLine(c.s.Pop());
+            if (c.S.Count != 0) {
+                Console.WriteLine(c.S.Pop());
             }
         }
     }

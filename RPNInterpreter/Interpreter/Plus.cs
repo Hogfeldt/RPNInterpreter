@@ -12,7 +12,7 @@ namespace RPNInterpreter {
         {            
             left.Interpret(context);
             right.Interpret(context);
-            context.s.Push(context.s.Pop() + context.s.Pop());
+            context.S.Push(context.S.Pop() + context.S.Pop());
         }
     }
 }
