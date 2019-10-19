@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Tests
 {
-    public class AddUnitTest
+    public class PlusUnitTest
     {
         private IExpression _uut;
         private IExpression _a;
@@ -26,7 +26,7 @@ namespace Tests
         [TestCase(-3, -3, -6)]
 
 
-        public void Add_UnitTest(int a, int b, int result)
+        public void Plus_UnitTest(int a, int b, int result)
         {
             _context.s.Push(a);
             _context.s.Push(b);
