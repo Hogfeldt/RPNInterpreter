@@ -11,19 +11,7 @@ namespace RPNParser {
             Stack<Tuple<TokenName, string>> tokens = tokenization(input);
             Tuple<TokenName, string> root = tokens.Peek();
             IExpression result = null;
-            // Defining a variable is a bit special and should therefore be handled seperatly 
-            if(root.Item1 == TokenName.Operator && root.Item2 == "=") {
-                root = tokens.Pop();
-                Tuple<TokenName, string> variable_t = tokens.Pop();
-                if (variable_t.Item1 != TokenName.Identifier) {
-                    throw new SyntaxErrorException("Invalid identifier: " + variable_t.Item2);
-                } else {
-                    IExpression exp = buildSubtree(tokens);
-                    return new Define(exp, variable_t.Item2);
-                }
-            } else {
-                result = buildSubtree(tokens);
-            }
+            result = buildSubtree(tokens);
             if (tokens.Count != 0) {
                 throw new SyntaxErrorException("Not valid syntax");
             } 
@@ -36,11 +24,19 @@ namespace RPNParser {
                 return getNumSubTree(curr_t.Item2);
             } else if (curr_t.Item1 == TokenName.Identifier) {
                 return new Variable(curr_t.Item2);
+            } else if(curr_t.Item1 == TokenName.Operator && curr_t.Item2 == "=") {
+                Tuple<TokenName, string> variable_t = tokens.Pop();
+                if (variable_t.Item1 != TokenName.Identifier) {
+                    throw new SyntaxErrorException("Invalid identifier: " + variable_t.Item2);
+                } else {
+                    IExpression exp = buildSubtree(tokens);
+                    return new Define(exp, variable_t.Item2);
+                }
             } else {
                 IExpression left = buildSubtree(tokens);
                 IExpression right = buildSubtree(tokens);
                 if(curr_t.Item2 == "+") {
-                    return new Plus(left, right);
+                    return new Plus(left, right);          
                 } else if (curr_t.Item2 == "-") {
                     return new Minus(right, left);
                 } else if (curr_t.Item2 == "*") {
